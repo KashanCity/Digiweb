@@ -1,15 +1,16 @@
+
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-
+ 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-// در صورت استفاده از GitHub Pages، مقدار base را به نام ریپازیتوری تغییر دهید
-// مثال: base: '/digimarket/'
+ 
+// آدرس دیپلوی شما: https://kashancity.github.io/Digiweb/
+// پس base باید دقیقاً برابر نام ریپازیتوری با همین حروف بزرگ/کوچک باشد.
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/Digiweb/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -19,3 +20,4 @@ export default defineConfig({
     port: 5173,
   },
 });
+ 
