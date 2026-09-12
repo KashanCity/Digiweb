@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>در حال انتقال...</title>
+    <script type="text/javascript">
+      // این اسکریپت مخصوص GitHub Pages است تا رفرش کردن روی مسیرهای داخلی
+      // (مثل /shop یا /product/1) باعث خطای ۴۰۴ نشود.
+      //
+      // اگر سایت روی یک Project Page قرار دارد (یعنی آدرس آن به شکل
+      // https://username.github.io/repo-name/ است) مقدار segmentCount را
+      // برابر ۱ نگه دارید. اگر روی یک User/Org Page یا دامنه اختصاصی
+      // (مثل https://username.github.io/ یا دامنه شخصی) قرار دارد،
+      // مقدار زیر را به 0 تغییر دهید.
+      var segmentCount = 1;
+
+      var l = window.location;
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname
+            .split('/')
+            .slice(0, 1 + segmentCount)
+            .join('/') +
+          '/?/' +
+          l.pathname
+            .slice(1)
+            .split('/')
+            .slice(segmentCount)
+            .join('/')
+            .replace(/&/g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash,
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
